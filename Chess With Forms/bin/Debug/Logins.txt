@@ -1,0 +1,63 @@
+log: pear
+pass: pass
+id: 1
+blue
+0
+false
+true
+true
+
+log: user2
+pass: pass
+id: 2
+blue
+0
+false
+true
+true
+
+log: testAccount
+pass: pass
+id: 3
+blue
+0
+true
+true
+true
+
+log: IAmARobot
+pass: botPass
+id: 4
+blue
+0
+true
+true
+true
+
+log: helloWorld
+pass: password
+id: 5
+blue
+0
+true
+true
+true
+
+log: test
+pass: pass
+id: 6
+blue
+0
+true
+true
+true
+
+log: testing
+pass: pass
+id: 7
+blue
+0
+true
+true
+false
+

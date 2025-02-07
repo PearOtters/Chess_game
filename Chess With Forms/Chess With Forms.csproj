@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\SQLite.3.13.0\build\net45\SQLite.props" Condition="Exists('..\packages\SQLite.3.13.0\build\net45\SQLite.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{635DA627-89CB-47CB-B4AC-D0FC6D685B5E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Chess_With_Forms</RootNamespace>
+    <AssemblyName>Chess With Forms</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite.Net, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLite.Net.Core-PCL.3.1.1\lib\portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1\SQLite.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite.Net.Platform.Generic, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLite.Net-PCL.3.1.1\lib\net40\SQLite.Net.Platform.Generic.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite.Net.Platform.Win32, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLite.Net-PCL.3.1.1\lib\net4\SQLite.Net.Platform.Win32.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.117.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.117.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.117.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.117.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.117.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Black Bishop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Black King.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Black Knight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Black Pawn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Black Queen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Black Rook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\White Bishop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\White King.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\White Knight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\White Pawn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\White Queen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\White Rook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avilable_place.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Available_Place.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Available_Places.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Available_Pieces.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Available_On_Piece.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Available_On_Pieces.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Available_On_Pieces1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\available_place_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlackCheckMate.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StaleMate.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhiteCheckMate.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blackcheckmate1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X button1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WBishop1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WKing1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WKnight1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WPawn1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WQueen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WRook1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BBishop1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BKing1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BKnight1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BPawn1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BQueen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BRook1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eye_Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eye_Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AnarchyBBishop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AnarchyBKnight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AnarchyBPawn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AnarchyBQueen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AnarchyBRook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AnarchyWBishop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AnarchyWKnight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AnarchyWPawn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AnarchyWQueen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AnarchyWRook.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\SQLite.3.13.0\build\net45\SQLite.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SQLite.3.13.0\build\net45\SQLite.props'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+</Project>
